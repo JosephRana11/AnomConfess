@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  {%load static%}
+  <meta charset="UTF-8">
+  <title>AnomMsg</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="feedback-card">
+  <div class="feedback-header">
+    Send Confession
+  <form class="feedback-body" method="post" action="{% url 'IndexLink' %}">
+    {% csrf_token %}
+    <input type="text" class="feedback-body__email" placeholder="Username (Optional)" name="SenderUserName" />
+    <textarea type="text" class="feedback-body__message" placeholder="Message" name="SenderText" required></textarea>
+    <button>SEND</button>
+  </form>
+</div>
+<!-- partial -->
+<script src="{% static 'script.js' %}"></>
+
+</body>
+</html>
